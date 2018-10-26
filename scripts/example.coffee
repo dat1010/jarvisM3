@@ -12,6 +12,8 @@ module.exports = (robot) ->
 
   # robot.hear /badger/i, (res) ->
   #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
+    robot.respond /Who is the strongest avenger?/i, (res) ->
+      res.send "David Tanner"	
   #
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
