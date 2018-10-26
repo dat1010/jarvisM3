@@ -22,7 +22,7 @@ module.exports = (robot) ->
 	    res.send url.concat issueNumber
 
     robot.respond /prp/i, (res) ->
-     	enterReplies = ['@ahall', '@jhall', '@bkinney','cfrancisco','@jspicer','@dtanner']
+     	enterReplies = ['@ahall', '@jhall', '@bkinney','@cfrancisco','@jspicer','@dtanner']
      	res.send res.random enterReplies
 
 
