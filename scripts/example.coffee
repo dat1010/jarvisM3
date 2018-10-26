@@ -11,10 +11,17 @@
 module.exports = (robot) ->
 
     robot.respond /Who is the strongest avenger?/i, (res) ->
-      res.send "David Tanner"	
+      res.send "David Tanner"
     robot.respond /strongest avenger/i, (res) ->
-      res.send "David Tanner"	
-  #
+      res.send "David Tanner"
+
+
+    robot.respond /issue (.*)/i, (res) ->
+	    issueNumber = res.match[1]
+	    url = "http://utshelp/Issue_view.asp?IssueNbr="
+	    res.send url.concat issueNumber
+
+
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
   #   if doorType is "pod bay"
@@ -22,13 +29,8 @@ module.exports = (robot) ->
   #   else
   #     res.reply "Opening #{doorType} doors"
   #
-  # robot.hear /I like pie/i, (res) ->
+  #  robot.hear /I like pie/i, (res) ->
   #   res.emote "makes a freshly baked pie"
-  #
-  # lulz = ['lol', 'rofl', 'lmao']
-  #
-  # robot.respond /lulz/i, (res) ->
-  #   res.send res.random lulz
   #
   # robot.topic (res) ->
   #   res.send "#{res.message.text}? That's a Paddlin'"
